@@ -11,7 +11,11 @@ class MovieDetailViewController: UIViewController {
 
     @IBOutlet weak var imageVieMovieDetail: UIImageView!
     @IBOutlet weak var labelYear: UILabel!
-    @IBOutlet weak var labelSinopsis: UILabel!
+    @IBOutlet weak var labelGenero: UILabel!
+    @IBOutlet weak var labelPais: UILabel!
+    @IBOutlet weak var labelDirector: UILabel!
+    @IBOutlet weak var labelDuracion: UILabel!
+    @IBOutlet weak var textViewSinopsis: UITextView!
     
     var movieId: String!
     var movie : Movie? = nil
@@ -35,8 +39,11 @@ class MovieDetailViewController: UIViewController {
                 self.navigationItem.title = self.movie?.Title
                 self.imageVieMovieDetail.loadImageFromURL(url: URL(string: (self.movie?.Poster)!)!)
                 self.labelYear.text = self.movie?.Year
-                self.labelSinopsis.text = self.movie?.Plot
-                
+                self.labelGenero.text = self.movie?.Genre
+                self.labelPais.text = self.movie?.Country
+                self.labelDirector.text = self.movie?.Director
+                self.labelDuracion.text = self.movie?.Runtime
+                self.textViewSinopsis.text = self.movie?.Plot
             }
         }
     }
